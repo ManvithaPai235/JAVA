@@ -16,3 +16,6 @@ public class NumberChecker {
         } else {
             System.out.println("The number is zero.");
         }
+          scanner.close();
+}
+}
