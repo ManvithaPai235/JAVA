@@ -1,19 +1,38 @@
-import java.util.Scanner;
-
 public class EvenOdd {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        int limit = 50; // Change this to your desired limit
 
-        // Prompt user for input
-        System.out.print("Enter a number: ");
-        int number = scanner.nextInt();
-
-        // Check if the number is even or odd
-        if (number % 2 == 0) {
-            System.out.println(number + " is an even number.");
-        } else {
-            System.out.println(number + " is an odd number.");
+        System.out.println("Even numbers up to " + limit + ":");
+        for (int i = 1; i <= limit; i++) {
+            if (i % 2 == 0) {
+                System.out.print(i + " ");
+            }
         }
 
-        scanner.close();
-   }}
+        System.out.println("\n\nOdd numbers up to " + limit + ":");
+        for (int i = 1; i <= limit; i++) {
+            if (i % 2 != 0) {
+                System.out.print(i + " ");
+            }
+        }
+
+        System.out.println("\n\nPrime numbers up to " + limit + ":");
+        for (int i = 2; i <= limit; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+
+    public static boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
